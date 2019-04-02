@@ -37,7 +37,7 @@ defmodule OrangePiZeroPlus2.MixProject do
       # artifact_sites: [
       #   {:github_releases, "nerves-project/#{@app}"}
       # ],
-      # build_runner_opts: build_runner_opts(),
+      build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
       platform_config: [
         defconfig: "nerves_defconfig"
@@ -48,11 +48,10 @@ defmodule OrangePiZeroPlus2.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.3", runtime: false},
+      {:nerves, "~> 1.4.2", runtime: false},
       {:nerves_system_br, "1.6.8", runtime: false},
-      #{:nerves_toolchain_arm_unknown_linux_gnueabihf, "1.1.0", runtime: false},
-      {:nerves_toolchain_aarch64_unknown_linux_gnueabihf, git: "https://github.com/nerves-project/toolchains.git", tag: "v1.1.0"},
-      # {:nerves_toolchain_aarch64_unknown_linux_gnueabihf, path: "../nerves_toolchain_aarch64_unknown_linux_gnueabi-linux_x86_64-1.1.0"},
+      # {:nerves_toolchain_arm_unknown_linux_gnueabihf, "1.1.0", runtime: false},
+      {:nerves_toolchain_aarch64_unknown_linux_gnueabi, "1.1.0", runtime: false},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
       {:ex_doc, "~> 0.18", only: [:dev, :test], runtime: false}
     ]
@@ -68,8 +67,8 @@ defmodule OrangePiZeroPlus2.MixProject do
     [
       maintainers: ["Elia Mazzuoli", "Alessandro Fontani"],
       files: package_files(),
-      licenses: ["Apache 2.0"],
-      #links: %{"GitHub" => "https://github.com/nerves-project/#{@app}"}
+      licenses: ["Apache 2.0"]
+      # links: %{"GitHub" => "https://github.com/nerves-project/#{@app}"}
     ]
   end
 
@@ -99,13 +98,9 @@ defmodule OrangePiZeroPlus2.MixProject do
     File.cp_r("assets", "doc/assets")
   end
 
-  # defp build_runner_opts() do
-  #   if primary_site = System.get_env("BR2_PRIMARY_SITE") do
-  #     [make_args: ["BR2_PRIMARY_SITE=#{primary_site}"]]
-  #   else
-  #     []
-  #   end
-  # end
+  defp build_runner_opts() do
+    []
+  end
 
   defp set_target() do
     if function_exported?(Mix, :target, 1) do
