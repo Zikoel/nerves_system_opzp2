@@ -48,10 +48,11 @@ defmodule OrangePiZeroPlus2.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.3", runtime: false},
-      {:nerves_system_br, "1.6.8", runtime: false},
-      #{:nerves_toolchain_arm_unknown_linux_gnueabihf, "1.1.0", runtime: false},
-      {:nerves_toolchain_aarch64_unknown_linux_gnueabihf, git: "https://github.com/nerves-project/toolchains.git", tag: "v1.1.0"},
+      {:nerves, "~> 1.4.1", runtime: false},
+      {:nerves_system_br, "1.7.1", runtime: false},
+      # {:nerves_toolchain_arm_unknown_linux_gnueabihf, "1.1.0", runtime: false},
+      {:nerves_toolchain_aarch64_unknown_linux_gnueabihf,
+       git: "https://github.com/nerves-project/toolchains.git", tag: "v1.1.0"},
       # {:nerves_toolchain_aarch64_unknown_linux_gnueabihf, path: "../nerves_toolchain_aarch64_unknown_linux_gnueabi-linux_x86_64-1.1.0"},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
       {:ex_doc, "~> 0.18", only: [:dev, :test], runtime: false}
@@ -68,8 +69,8 @@ defmodule OrangePiZeroPlus2.MixProject do
     [
       maintainers: ["Elia Mazzuoli", "Alessandro Fontani"],
       files: package_files(),
-      licenses: ["Apache 2.0"],
-      #links: %{"GitHub" => "https://github.com/nerves-project/#{@app}"}
+      licenses: ["Apache 2.0"]
+      # links: %{"GitHub" => "https://github.com/nerves-project/#{@app}"}
     ]
   end
 
