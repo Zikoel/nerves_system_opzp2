@@ -11,13 +11,12 @@ defmodule OrangePiZeroPlus2.MixProject do
       app: @app,
       version: @version,
       elixir: "~> 1.6",
-      compilers: Mix.compilers() ++ [:nerves_package],
       nerves_package: nerves_package(),
+      compilers: Mix.compilers() ++ [:nerves_package],
       description: description(),
       package: package(),
       deps: deps(),
-      aliases: [loadconfig: [&bootstrap/1], docs: ["docs", &copy_images/1]],
-      docs: [extras: ["README.md"], main: "readme"]
+      aliases: [loadconfig: [&bootstrap/1]]
     ]
   end
 
@@ -37,7 +36,7 @@ defmodule OrangePiZeroPlus2.MixProject do
       # artifact_sites: [
       #   {:github_releases, "nerves-project/#{@app}"}
       # ],
-      build_runner_opts: build_runner_opts(),
+      #build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
       platform_config: [
         defconfig: "nerves_defconfig"
@@ -82,7 +81,6 @@ defmodule OrangePiZeroPlus2.MixProject do
       "fwup-revert.conf",
       "fwup.conf",
       "LICENSE",
-      "linux-4.14.defconfig",
       "mix.exs",
       "nerves_defconfig",
       "post-build.sh",
@@ -93,14 +91,9 @@ defmodule OrangePiZeroPlus2.MixProject do
     ]
   end
 
-  # Copy the images referenced by docs, since ex_doc doesn't do this.
-  defp copy_images(_) do
-    File.cp_r("assets", "doc/assets")
-  end
-
-  defp build_runner_opts() do
-    []
-  end
+  # defp build_runner_opts() do
+  #   []
+  # end
 
   defp set_target() do
     if function_exported?(Mix, :target, 1) do
