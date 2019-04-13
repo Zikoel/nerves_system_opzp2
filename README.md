@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/Zikoel/nerves_system_opzp2/tree/master.svg?style=svg)](https://circleci.com/gh/Zikoel/nerves_system_opzp2/tree/master)
+
 # How to compile
 
 1. `mix deps.get`
