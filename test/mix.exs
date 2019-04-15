@@ -34,7 +34,7 @@ defmodule Test.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:nerves_system_rpi3, path: "../", runtime: false},
+      {:nerves_system_opzp2, path: "../", runtime: false},
       {:nerves_system_test, github: "nerves-project/nerves_system_test"}
     ]
   end

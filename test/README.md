@@ -1,4 +1,4 @@
-# Raspberry Pi 3 Test Suite
+# Orange Pi Zero Plus 2 Test Suite
 
 Executes ExUnit tests on target hardware and reports results to the
 [Nerves test server](https://nerves-test-server.herokuapp.com/nerves-project/nerves_system_rpi3)
@@ -20,6 +20,7 @@ $ fwup -g
 ```
 
 The get the base64 values and export the variables
+
 ```
 $ export NERVES_FW_PRIV_KEY=$(cat fwup-key.priv | base64)
 $ export NERVES_FW_PUB_KEY=$(cat fwup-key.pub | base64)
@@ -61,5 +62,4 @@ $ mix firmware.burn
 
 ## Provisioning
 
-The Raspberry Pi 3 uses `eth0` to connect to the report server and requires a
-wired ethernet connection. The device should establish a connection to the network and join the test farm.
+The Orange Pi Zero Plus 2 uses `wlan0` to connect to the report server and requires an available wifi network, the wifi SSID and password must be passed with `NERVES_FW_SSID_NAME` and `NERVES_FW_SSID_PASSWORD`. The device should establish a connection to the network and join the test farm.
