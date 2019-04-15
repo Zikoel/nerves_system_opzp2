@@ -1,5 +1,13 @@
 [![CircleCI](https://circleci.com/gh/Zikoel/nerves_system_opzp2/tree/master.svg?style=svg)](https://circleci.com/gh/Zikoel/nerves_system_opzp2/tree/master)
 
+# Nerves System Orange Pi Zero Plus 2 (opzp2)
+
+This is a nerves system for the specified Orange Pi board. The project starts by a complete copy of the working and well done [Raspberry Pi 3 System](https://github.com/nerves-project/nerves_system_rpi3)
+
+## The board
+
+
+
 # How to compile
 
 1. `mix deps.get`

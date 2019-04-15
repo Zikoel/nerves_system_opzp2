@@ -1,7 +1,7 @@
 defmodule OrangePiZeroPlus2.MixProject do
   use Mix.Project
 
-  @app :orange_pi_zero_plus_2
+  @app :nerves_system_opzp2
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -58,7 +58,7 @@ defmodule OrangePiZeroPlus2.MixProject do
 
   defp description do
     """
-    Nerves System - Raspberry Pi 3 B / B+
+    Nerves System - Orange Pi Zero Plus 2
     """
   end
 
