@@ -76,8 +76,6 @@ defmodule OrangePiZeroPlus2.MixProject do
       "fwup_include",
       "rootfs_overlay",
       "CHANGELOG.md",
-      "cmdline.txt",
-      "config.txt",
       "fwup-revert.conf",
       "fwup.conf",
       "LICENSE",
